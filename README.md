@@ -32,4 +32,4 @@ npm run build
 CI는 main/develop 대상 PR 및 해당 브랜치 push에서 실행됩니다. PR 커밋과 squash용 PR 제목도 검사합니다.
 필수 검사 등록 시 CI의 `quality` 작업을 선택합니다.
 
-`react/no-danger` 규칙으로 `dangerouslySetInnerHTML` 사용을 금지합니다.
+`@eslint-react/dom-no-dangerously-set-innerhtml` 규칙으로 `dangerouslySetInnerHTML` 사용을 금지합니다.
