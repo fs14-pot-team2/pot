@@ -24,3 +24,6 @@ coverage/
 # OS and secrets
 .DS_Store
 *.pem
+
+# Next.js generated type declarations
+next-env.d.ts
