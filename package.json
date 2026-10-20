@@ -29,11 +29,14 @@
     "@commitlint/config-conventional": "21.2.4",
     "@eslint-react/eslint-plugin": "5.28.3",
     "@eslint/js": "10.0.1",
+    "@next/eslint-plugin-next": "16.4.2",
     "@types/node": "^24.0.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
     "eslint": "10.13.0",
     "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-import-x": "4.17.1",
+    "eslint-plugin-jsx-a11y-x": "0.2.0",
     "eslint-plugin-react-hooks": "7.1.1",
     "globals": "^16.5.0",
     "husky": "^9.1.7",
@@ -41,6 +44,11 @@
     "prettier": "^3.6.2",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.72.0"
+  },
+  "overrides": {
+    "@next/eslint-plugin-next": {
+      "fast-glob": "npm:tinyglobby@0.2.17"
+    }
   },
   "lint-staged": {
     "*.{js,mjs,cjs,ts,tsx}": [
