@@ -1,3 +1,4 @@
+import eslint from "@eslint/js";
 import tseslint from "typescript-eslint";
 import globals from "globals";
 import prettier from "eslint-config-prettier/flat";
@@ -6,6 +7,7 @@ import reactHooks from "eslint-plugin-react-hooks";
 
 export default tseslint.config(
   { ignores: [".next/**", "out/**", "dist/**", "next-env.d.ts", "src/generated/**"] },
+  eslint.configs.recommended,
   ...tseslint.configs.recommended,
   {
     files: ["**/*.{js,jsx,mjs,ts,tsx}"],
