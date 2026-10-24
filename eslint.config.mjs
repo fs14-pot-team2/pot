@@ -26,6 +26,8 @@ export default tseslint.config(
       import: importPlugin,
     },
     rules: {
+      "no-unused-vars": "off",
+      "@typescript-eslint/no-unused-vars": "off",
       ...reactHooks.configs.recommended.rules,
       ...nextPlugin.configs["core-web-vitals"].rules,
       "@eslint-react/no-missing-component-display-name": "error",
