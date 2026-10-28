@@ -19,9 +19,14 @@ cp .env.example .env
 npm run dev
 ```
 
+- `nvm use`: `.nvmrc`에 지정된 Node.js 버전으로 맞춥니다.
+- `npm ci`: 잠금 파일에 기록된 의존성을 설치하고 Husky 커밋 검사를 설정합니다.
+- `cp .env.example .env`: 예시 환경 변수 파일을 복사해 개인용 `.env` 파일을 만듭니다. 기존 `.env`가 있다면 덮어쓰지 않도록 이 명령을 건너뛰세요.
+- `npm run dev`: 로컬 개발 서버를 실행합니다.
+
 브라우저에서 <http://localhost:3000>을 열면 됩니다. 현재 첫 화면은 기본 안내 화면입니다.
 
-`.env.example`의 `NEXT_PUBLIC_API_URL`은 API 주소입니다. 로컬 백엔드를 함께 실행한다면 기본값인 `http://localhost:4000`을 사용할 수 있습니다. 실제 API 연동 방식과 주소는 백엔드 작업 상황에 맞춰 팀에서 정합니다. `NEXT_PUBLIC_`으로 시작하는 값은 브라우저에 노출되므로 비밀값을 넣지 마세요.
+`.env.example`의 `NEXT_PUBLIC_API_URL=http://localhost:4000`은 로컬 개발용 예시입니다. Vercel에서 백엔드 API를 호출할 환경에는 `NEXT_PUBLIC_API_URL=https://pot-api.duckdns.org`를 설정합니다. 환경 변수를 추가하거나 변경한 뒤에는 해당 환경을 다시 배포해야 적용됩니다. `NEXT_PUBLIC_`으로 시작하는 값은 브라우저에 노출되므로 비밀값을 넣지 마세요. 브라우저에서 허용할 프론트 주소는 프론트 환경 변수가 아니라 백엔드 Elastic Beanstalk의 `CORS_ORIGINS`에서 관리합니다.
 
 ## 폴더 구성
 
@@ -43,8 +48,8 @@ npm run dev
 1. `pot-fe`에 작업 Issue를 만들고 프로젝트의 **Todo**에 추가합니다.
 2. 작업을 시작할 때 Issue를 **In Progress**로 옮기고 `develop`에서 작업 브랜치를 만듭니다. 예: `feat/sitter-profile`.
 3. 작업이 끝나면 `develop`을 대상으로 PR을 만들고, PR 오른쪽 **Development**에서 해당 Issue를 연결합니다. PR 제목과 커밋은 `feat: 팟트너 프로필 화면 구현`처럼 팀의 형식을 사용합니다.
-4. 리뷰와 CI 확인 후 PR을 `develop`에 머지합니다. 완료된 Issue를 닫으면 프로젝트의 **Done**으로 이동하도록 설정할 수 있습니다. `main`이 기본 브랜치이므로 `develop` 대상 PR에 `Closes #번호`를 적는 것만으로는 Issue가 자동 종료되지 않습니다.
-5. 배포할 변경사항은 팀 일정에 맞춰 `develop`에서 `main`으로 별도 PR을 만듭니다.
+4. 리뷰와 CI 확인 후 PR을 `develop`에 머지합니다. 현재 기본 브랜치는 `develop`입니다. 같은 저장소의 Issue를 자동 종료하려면 PR 본문에 `Closes #번호`를 적거나 PR의 **Development**에서 Issue를 연결합니다. 프로젝트에서 Issue 종료 시 **Done**으로 이동하는 워크플로가 켜져 있어야 상태도 함께 바뀝니다.
+5. 배포할 변경사항은 팀 일정에 맞춰 `develop`에서 `main`으로 별도 PR을 만듭니다. Vercel의 Production 배포는 `main`을 기준으로 하고, `develop` 배포는 Preview에서 확인합니다.
 
 ## 코드 규칙과 검사
 
