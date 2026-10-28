@@ -13,11 +13,16 @@ POT (Plant On Trust)은 식물 돌봄이 필요한 팟오너와 방문 돌봄을
 Node.js **24.16.0**과 npm **11.x**를 사용합니다. 저장소 루트에서 다음 순서로 실행하세요.
 
 ```bash
-nvm use - node.js 버전 통일
-npm ci - 의존성 설치 및 Husky 검사 설정
-cp .env.example .env 
-npm run dev 
+nvm use
+npm ci
+cp .env.example .env
+npm run dev
 ```
+
+- `nvm use`: `.nvmrc`에 지정된 Node.js 버전으로 맞춥니다.
+- `npm ci`: 잠금 파일에 기록된 의존성을 설치하고 Husky 커밋 검사를 설정합니다.
+- `cp .env.example .env`: 예시 환경 변수 파일을 복사해 개인용 `.env` 파일을 만듭니다. 기존 `.env`가 있다면 덮어쓰지 않도록 이 명령을 건너뛰세요.
+- `npm run dev`: 로컬 개발 서버를 실행합니다.
 
 브라우저에서 <http://localhost:3000>을 열면 됩니다. 현재 첫 화면은 기본 안내 화면입니다.
 
