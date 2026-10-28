@@ -1,0 +1,18 @@
+:root {
+  /* Brand */
+  --color-brand: #6e7048;
+
+  /* Background */
+  --color-bg: #fefdf9;
+  --color-bg-input: #ebebdd;
+  --color-bg-tag: #f3f0e6;
+
+  /* Border */
+  --color-border: #a7a984;
+
+  /* Font Weight */
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+}
