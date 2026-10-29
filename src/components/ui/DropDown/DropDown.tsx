@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "./DropDown.module.css";
 
 interface DropDownOption {
@@ -35,6 +35,31 @@ type DropDownProps = SingleDropDownProps | MultipleDropDownProps;
 export default function DropDown(props: DropDownProps) {
   const { placeholder, options, menuColumns = 1, disabled = false, className } = props;
   const [isOpen, setIsOpen] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleOutsideClick = (event: PointerEvent) => {
+      if (!containerRef.current?.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+
+    const handleEscapeKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setIsOpen(false);
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener("pointerdown", handleOutsideClick);
+      document.addEventListener("keydown", handleEscapeKey);
+    }
+
+    return () => {
+      document.removeEventListener("pointerdown", handleOutsideClick);
+      document.removeEventListener("keydown", handleEscapeKey);
+    };
+  }, [isOpen]);
 
   const handleToggle = () => {
     setIsOpen((wasOpen) => !wasOpen);
@@ -82,7 +107,7 @@ export default function DropDown(props: DropDownProps) {
   };
 
   return (
-    <div className={`${styles.container} ${className || ""}`}>
+    <div ref={containerRef} className={`${styles.container} ${className || ""}`}>
       <button
         type="button"
         className={`${styles.trigger} ${isOpen ? styles.open : ""}`}

@@ -26,8 +26,8 @@
 }
 
 .trigger:focus-visible {
-  outline: 3px solid var(--color-border);
-  outline-offset: 2px;
+  outline: none;
+  border-color: var(--color-brand);
 }
 
 .trigger:disabled {
