@@ -39,13 +39,6 @@ button:disabled {
   cursor: not-allowed;
 }
 
-input:not([type="checkbox"], [type="radio"], [type="file"]),
-textarea {
-  border: 0;
-  border-radius: 0;
-  background: none;
-}
-
 textarea {
   resize: vertical;
 }
