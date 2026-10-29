@@ -1,0 +1,81 @@
+.toggle {
+  --toggle-inactive-color: #b3b3b3;
+
+  position: relative;
+  display: flex;
+  width: 100%;
+  border-bottom: 1px solid var(--toggle-inactive-color);
+}
+
+.option {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-width: 0;
+  padding: 14px 8px;
+  border: 0;
+  background: transparent;
+  color: var(--toggle-inactive-color);
+  font-family: inherit;
+  font-size: 20px;
+  font-weight: var(--font-semibold);
+  line-height: 26px;
+  cursor: pointer;
+  transition: color 200ms ease;
+}
+
+.option[aria-pressed="true"] {
+  color: var(--toggle-active-color);
+  font-weight: var(--font-bold);
+}
+
+.option:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: -4px;
+  border-radius: 4px;
+}
+
+.default {
+  --toggle-active-color: #111111;
+  --toggle-line-height: 3px;
+}
+
+.auth {
+  --toggle-active-color: var(--color-brand);
+  --toggle-line-height: 4px;
+}
+.auth .option {
+  font-size: 24px;
+}
+
+.indicator {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  height: var(--toggle-line-height);
+  background-color: var(--toggle-active-color);
+  pointer-events: none;
+  transition:
+    left 250ms ease,
+    width 250ms ease;
+}
+
+@media (max-width: 768px) {
+  .option {
+    font-size: 14px;
+    padding: 12px 6px;
+  }
+
+  .auth .option {
+    font-size: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .option,
+  .indicator {
+    transition: none;
+  }
+}
