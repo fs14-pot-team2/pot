@@ -62,7 +62,7 @@
     width 250ms ease;
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 768px) {
   .option {
     font-size: 14px;
     padding: 12px 6px;
