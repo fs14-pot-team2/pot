@@ -1,0 +1,55 @@
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  min-height: 2.33em;
+  padding: 0.42em 0.67em;
+  border-radius: 0.5em;
+  font-size: 12px;
+  font-weight: var(--font-semibold);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.sm {
+  font-size: 10px;
+}
+
+.md {
+  font-size: 12px;
+}
+
+.icon {
+  width: 1.33em;
+  height: 1.33em;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.shortIcon {
+  transform: scale(1.4);
+}
+
+.profile {
+  background-color: var(--color-bg-tag);
+  color: var(--color-brand);
+}
+
+.request {
+  background-color: var(--color-brand);
+  color: var(--color-bg-tag);
+}
+
+.request .icon {
+  filter: brightness(0) saturate(100%) invert(94%) sepia(7%) saturate(363%) hue-rotate(5deg)
+    brightness(104%) contrast(91%);
+}
+
+.request .unfilteredIcon {
+  filter: none;
+}
+
+.designated {
+  background-color: #52744d;
+  color: var(--color-bg-tag);
+}
