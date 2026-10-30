@@ -22,7 +22,7 @@
 
 .page {
   color: #c5c5c5;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: var(--font-regular);
 }
 
@@ -41,10 +41,10 @@
 
 .arrow::before {
   content: "";
-  width: 8px;
-  height: 8px;
-  border-top: 2px solid currentColor;
-  border-right: 2px solid currentColor;
+  width: 7.2px;
+  height: 7.2px;
+  border-top: 1.8px solid currentColor;
+  border-right: 1.8px solid currentColor;
 }
 
 .previous::before {
