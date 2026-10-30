@@ -115,6 +115,12 @@ export default function Header({ isLoggedIn, userRole, nickname }: HeaderProps) 
           </Button>
         )}
 
+        {isLoggedIn && (
+          <button type="button" className={styles.messageButton} aria-label="쪽지" disabled>
+            <Image src="/icons/ic_message.svg" alt="" width={24} height={24} />
+          </button>
+        )}
+
         {isLoggedIn && userRole && nickname && (
           <ProfileMenu userRole={userRole} nickname={nickname} />
         )}

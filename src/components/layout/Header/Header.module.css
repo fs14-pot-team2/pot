@@ -40,6 +40,15 @@
   width: 116px;
 }
 
+.messageButton {
+  display: none; /* 1차 MVP: 쪽지 기능 구현 전까지 숨김 */
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  margin-right: 24px;
+}
+
 .logoLink {
   display: flex;
   align-items: center;
@@ -75,6 +84,10 @@
 
   .tabletLogo {
     display: block;
+  }
+
+  .messageButton {
+    margin-right: 12px;
   }
 
   .menuButton {
