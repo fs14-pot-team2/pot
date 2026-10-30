@@ -1,0 +1,68 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(16px, 5vw, 32px);
+  width: 100%;
+}
+
+.page,
+.arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.page {
+  color: #c5c5c5;
+  font-size: 20px;
+  font-weight: var(--font-regular);
+}
+
+.page:hover {
+  color: var(--color-brand);
+}
+
+.page.current {
+  color: #1a1a1a;
+  font-weight: var(--font-medium);
+}
+
+.arrow {
+  color: #1a1a1a;
+}
+
+.arrow::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-top: 2px solid currentColor;
+  border-right: 2px solid currentColor;
+}
+
+.previous::before {
+  transform: rotate(-135deg);
+}
+
+.next::before {
+  transform: rotate(45deg);
+}
+
+.page:focus-visible,
+.arrow:focus-visible {
+  outline: 2px solid var(--color-border);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.arrow:disabled {
+  color: #c5c5c5;
+  cursor: default;
+}
