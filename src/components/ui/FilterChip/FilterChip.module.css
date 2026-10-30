@@ -1,0 +1,33 @@
+.chip {
+  width: 100%;
+  height: 54px;
+  padding: 0 20px;
+  border: 1px solid #d9d9d9;
+  border-radius: 999px;
+  background-color: var(--color-bg-wh);
+  color: #1a1a1a;
+  font-size: 18px;
+  font-weight: var(--font-medium);
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.chip:hover {
+  border-color: var(--color-border);
+}
+
+.chip:focus-visible {
+  outline: none;
+  border: 2px solid var(--color-brand);
+}
+
+.selected {
+  border-color: var(--color-brand);
+  background-color: var(--color-bg-tag);
+  color: var(--color-brand);
+}
+
+.chip:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
