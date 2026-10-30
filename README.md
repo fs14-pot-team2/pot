@@ -57,7 +57,8 @@ npm run dev
 - 변수·함수는 `camelCase`, 컴포넌트·컴포넌트 파일은 `PascalCase`, 일반 폴더는 `kebab-case`를 사용합니다. Next.js 예약 파일명은 프레임워크 규칙을 따릅니다.
 - 공통 상수는 `UPPER_SNAKE_CASE`, 일반 지역 `const`는 `camelCase`를 사용합니다.
 - 컴포넌트와 CSS Module 파일은 같은 폴더에 두고, 해당 CSS 파일은 `컴포넌트명.module.css`로 이름 짓습니다.
-- 커밋과 PR 제목은 `feat/fix/refactor/chore/style: 한글 설명` 형식을 사용합니다.
+- 커밋과 PR 제목은 `feat/fix/refactor/chore/style/test: 한글 설명` 형식을 사용합니다.
+- 제품 코드 변경 없이 테스트 코드를 추가하거나 수정할 때는 `test` 타입을 사용합니다.
 
 ```bash
 npm run lint
